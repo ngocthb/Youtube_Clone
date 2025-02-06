@@ -1,0 +1,123 @@
+.suggestion-video {
+  flex: 4;
+  display: flex;
+  padding-left: 15px;
+  border-radius: 8px;
+  gap: 15px;
+  padding-bottom: 15px;
+  &__thumbnail {
+    max-width: 230px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+  }
+
+  &__info {
+    margin-top: 20px;
+    .suggestion-video__channel-name {
+      font-size: 1rem;
+      color: gray;
+    }
+    .suggestion-video__channel-details {
+      display: flex;
+      gap: 5px;
+      font-size: 0.8rem;
+      color: gray;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .suggestion-video {
+    flex: 6;
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+    &__thumbnail {
+      max-width: 200px;
+      max-height: 130px;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__info {
+      .suggestion-video__channel-name {
+        font-size: 0.9rem;
+      }
+
+      .suggestion-video__channel-details {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .suggestion-video {
+    flex: 12;
+    padding-left: 5px;
+    padding-bottom: 10px;
+
+    &__thumbnail {
+      max-width: 150px;
+      max-height: 100px;
+    }
+
+    &__title {
+      font-size: 0.9rem;
+      -webkit-line-clamp: 1;
+    }
+
+    &__info {
+      margin-top: 10px;
+
+      .suggestion-video__channel-name {
+        font-size: 0.8rem;
+      }
+
+      .suggestion-video__channel-details {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .suggestion-video {
+    flex: 12;
+    padding-left: 0;
+    padding-bottom: 8px;
+
+    &__thumbnail {
+      max-width: 120px;
+      max-height: 80px;
+    }
+
+    &__title {
+      font-size: 0.8rem;
+      -webkit-line-clamp: 1;
+    }
+
+    &__info {
+      margin-top: 8px;
+
+      .suggestion-video__channel-name {
+        font-size: 0.7rem;
+      }
+
+      .suggestion-video__channel-details {
+        font-size: 0.5rem;
+      }
+    }
+  }
+}

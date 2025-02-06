@@ -1,0 +1,23 @@
+.mainVideo-layout::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.mainVideo {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainVideo {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,42 @@
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  color: white;
+  z-index: 100;
+}
+
+main {
+  margin-top: 56px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  flex: 1;
+}
+
+.content-open {
+  margin-left: 240px;
+}
+
+.content-closed {
+  margin-left: 60px;
+}
+
+aside {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  height: calc(100vh - 56px);
+  background-color: white;
+  color: white;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  z-index: 90;
+}
