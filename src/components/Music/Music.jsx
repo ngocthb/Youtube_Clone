@@ -18,7 +18,7 @@ const VideoSection = ({ title, videos, initialCount = 6 }) => {
   return (
     <div className="album-videos">
       <h3>{title}</h3>
-      <div className={`video-grid ${expanded ? "" : "collapsed"}`}>
+      <div className={`video-grid-1 ${expanded ? "" : "collapsed"}`}>
         {videos.slice(0, visibleCount).map((video) => (
           <div key={video.id} className="video-card-container show">
             <div className="top-lines"></div>
@@ -28,7 +28,7 @@ const VideoSection = ({ title, videos, initialCount = 6 }) => {
                 <PlayIcon />
               </div>
             </div>
-            <p className="video-title">{video.snippet.title}</p>
+            <p className="video-title-1">{video.snippet.title}</p>
           </div>
         ))}
       </div>

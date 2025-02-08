@@ -260,7 +260,7 @@
   width: 50%;
 }
 
-.video-title {
+.video-title-1 {
   margin-top: 12px;
   font-size: 13px;
   font-weight: 600;
@@ -278,7 +278,7 @@
     margin-bottom: 20px;
   }
   
-  .album-videos .video-grid {
+  .album-videos .video-grid-1 {
     display: grid;
     gap: 21px;
     overflow-x: auto;
@@ -402,11 +402,10 @@
     transition: width 0.4s ease-in-out, opacity 0.3s ease-in-out;
   }
   
- .video-grid {
+ .video-grid-1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
-  
   max-height: 1000px;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
