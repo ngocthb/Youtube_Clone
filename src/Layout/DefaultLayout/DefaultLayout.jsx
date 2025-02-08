@@ -34,7 +34,7 @@ function DefaultLayout() {
 
         <Sidebar isOpen={isSidebarOpen} />
         <main className={isSidebarOpen ? "content-open" : "content-closed"}>
-          <Carousel />
+          {location.pathname !== "/Music" && <Carousel />}
           <Outlet />
         </main>
       </div>
