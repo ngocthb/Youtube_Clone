@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchVideosRequest, resetVideos } from "../../redux/actions/videoAction";
 import { Skeleton, Row, Col } from "antd";
 import { useNavigate } from "react-router-dom";
-
+import Carousel from "../Carousel/Carousel"
 function Content() {
   const [videoToken, setVideoToken] = useState(null);
   const dispatch = useDispatch();
@@ -128,6 +128,7 @@ function Content() {
 
   return (
     <div className="main-content">
+      <Carousel />
       <div className="video-grid">
         {videoGrid}
       </div>

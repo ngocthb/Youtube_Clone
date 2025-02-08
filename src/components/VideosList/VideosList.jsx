@@ -99,9 +99,10 @@ function VideosList() {
         }
     }, [videos]);
 
-    console.log(listVideos);
+
     const videoGrid = useMemo(() => {
         return listVideos?.map((video, index) => (
+
             <div className="videos-list__item" key={index} onClick={() => handleClickVideo(video.id.videoId)}>
                 <div>
                     <img
