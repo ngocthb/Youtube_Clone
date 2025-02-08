@@ -16,9 +16,11 @@ const YOUTUBE_API_CHANNEL =
 
 const fetchSearchApi = async (params) => {
   try {
+    console.log(params);
     const response = await axios.get(YOUTUBE_API_SEARCH, {
       params,
     });
+
     return response.data;
   } catch (error) {
     console.log(error);
