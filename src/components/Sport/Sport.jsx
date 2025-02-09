@@ -1,4 +1,4 @@
-import "./Content.scss";
+import "./Sport.scss";
 import { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,8 +7,8 @@ import {
 } from "../../redux/actions/videoAction";
 import { Skeleton, Row, Col } from "antd";
 import { useNavigate } from "react-router-dom";
-import Carousel from "../Carousel/Carousel"
-function Content() {
+
+function Sport() {
   const [videoToken, setVideoToken] = useState(null);
   const dispatch = useDispatch();
   const [listVideos, setListVideos] = useState([]);
@@ -24,15 +24,23 @@ function Content() {
       key: API_KEY,
       maxResults: 10,
       pageToken: videoToken,
+      videoCategoryId: 17,
     };
     dispatch(fetchVideosRequest(params));
-
-    
   }, [dispatch, videoToken]);
 
+  // useEffect(() => {
+  //   if (videos?.items && videos.items.length > 1) {
+  //     setListVideos((prevVideos) => [...prevVideos, ...videos.items]);
+  //   }
+  // }, [videos]);
+
   useEffect(() => {
-    if (videos?.items && videos.items.length > 1) {
-      setListVideos((prevVideos) => [...prevVideos, ...videos.items]);
+    if (videos?.items && videos.items.length > 0) {
+      const sportVideos = videos.items.filter(
+        (video) => video.snippet.categoryId === "17"
+      );
+      setListVideos((prevVideos) => [...prevVideos, ...sportVideos]);
     }
   }, [videos]);
 
@@ -145,16 +153,9 @@ function Content() {
 
   return (
     <div className="main-content">
-
-
-
-      <Carousel />
-      <div className="video-grid">
-        {videoGrid}
-      </div>
-
+      <div className="video-grid">{videoGrid}</div>
     </div>
   );
 }
 
-export default Content;
+export default Sport;
