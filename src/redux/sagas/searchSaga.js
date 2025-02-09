@@ -61,7 +61,7 @@ function* fetchSearchSaga(action) {
     };
     yield put(searchVideosSuccess(updatedResponse));
   } catch (error) {
-    yield put(searchVideosFailure(error));
+    yield put(searchVideosFailure(error.message));
   }
 }
 
