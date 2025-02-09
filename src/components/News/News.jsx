@@ -97,8 +97,8 @@ function News() {
     }, [listVideos]);
 
     return (
-        <div className="News">
-            <h1>News</h1>
+        <div>
+            <div className="News__title">News</div>
             <div className="News__content">
                 {sports.map((sport, index) => (
                     <div className="News__items" key={index}>{sport}</div>

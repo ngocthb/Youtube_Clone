@@ -5,12 +5,17 @@ import Shorts from "../components/Shorts/Shorts.jsx";
 import VideosList from "../components/VideosList/VideosList.jsx";
 import VideoDetails from "../components/VideoDetails/VideoDetails.jsx";
 import Trending from "../components/Trending/Trending.jsx";
+import News from "../components/News/News.jsx";
 
 export const routes = [
   {
     path: "/",
     element: <DefaultLayout />,
     children: [
+      {
+        path: "/news",
+        element: <News />,
+      },
       {
         path: "/",
         element: <Content />,
@@ -27,10 +32,7 @@ export const routes = [
         path: "/trending",
         element: <Trending />,
       },
-      {
-        path: "/news",
-        element: <News />,
-      },
+
     ],
   },
   {
