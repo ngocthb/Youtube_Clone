@@ -4,6 +4,7 @@ import Content from "../components/Content/Content.jsx";
 import Shorts from "../components/Shorts/Shorts.jsx";
 import VideosList from "../components/VideosList/VideosList.jsx";
 import VideoDetails from "../components/VideoDetails/VideoDetails.jsx";
+import Sport from "../components/Sport/Sport.jsx";
 import Trending from "../components/Trending/Trending.jsx";
 import News from "../components/News/News.jsx";
 
@@ -26,13 +27,17 @@ export const routes = [
       },
       {
         path: "/search/:searchValue",
-        element: <VideosList />
+        element: <VideosList />,
       },
+      {
+        path: "/sport",
+        element: <Sport />,
+      },
+
       {
         path: "/trending",
         element: <Trending />,
       },
-
     ],
   },
   {
@@ -43,7 +48,6 @@ export const routes = [
         path: "/video/:videoId",
         element: <VideoDetails />,
       },
-
     ],
   },
 ];
