@@ -7,6 +7,7 @@ import "./DefaultLayout.scss";
 import Carousel from "../../components/Carousel/Carousel";
 
 
+
 function DefaultLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -34,7 +35,6 @@ function DefaultLayout() {
 
         <Sidebar isOpen={isSidebarOpen} />
         <main className={isSidebarOpen ? "content-open" : "content-closed"}>
-          <Carousel />
           <Outlet />
         </main>
       </div>

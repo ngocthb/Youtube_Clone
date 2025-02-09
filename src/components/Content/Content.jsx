@@ -7,7 +7,7 @@ import {
 } from "../../redux/actions/videoAction";
 import { Skeleton, Row, Col } from "antd";
 import { useNavigate } from "react-router-dom";
-
+import Carousel from "../Carousel/Carousel"
 function Content() {
   const [videoToken, setVideoToken] = useState(null);
   const dispatch = useDispatch();
@@ -26,6 +26,8 @@ function Content() {
       pageToken: videoToken,
     };
     dispatch(fetchVideosRequest(params));
+
+    
   }, [dispatch, videoToken]);
 
   useEffect(() => {
@@ -143,7 +145,14 @@ function Content() {
 
   return (
     <div className="main-content">
-      <div className="video-grid">{videoGrid}</div>
+
+
+
+      <Carousel />
+      <div className="video-grid">
+        {videoGrid}
+      </div>
+
     </div>
   );
 }
