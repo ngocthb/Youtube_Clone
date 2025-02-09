@@ -19,7 +19,7 @@ function Content() {
       chart: 'mostPopular',
       regionCode: 'US',
       key: API_KEY,
-      maxResults: 15,
+      maxResults: 10,
       pageToken: videoToken,
     };
     dispatch(fetchVideosRequest(params));
