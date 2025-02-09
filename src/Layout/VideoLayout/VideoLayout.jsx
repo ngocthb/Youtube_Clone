@@ -36,7 +36,7 @@ function VideoLayout() {
                     <SuggestionVideos categoryId={videoCategoryId} />
                 </main>
             </div>
-        </div >
+        </div>
     );
 }
 

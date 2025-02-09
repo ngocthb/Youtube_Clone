@@ -1,0 +1,21 @@
+.News__content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    border-bottom: 1px solid #e3dede;
+    padding-bottom: 2px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.News__items {
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+}
+
+.News__items:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+}

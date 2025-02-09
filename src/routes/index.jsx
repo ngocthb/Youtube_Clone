@@ -27,6 +27,10 @@ export const routes = [
         path: "/trending",
         element: <Trending />,
       },
+      {
+        path: "/news",
+        element: <News />,
+      },
     ],
   },
   {
