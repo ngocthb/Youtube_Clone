@@ -1,8 +1,7 @@
 import { all } from "redux-saga/effects";
-import videoSaga from "./VideoSaga";
+import VideosSaga from "./videoSaga";
 import SearchSaga from "./searchSaga";
 
-
 export default function* rootSaga() {
-  yield all([videoSaga(), SearchSaga()]);
+  yield all([VideosSaga(), SearchSaga()]);
 }
