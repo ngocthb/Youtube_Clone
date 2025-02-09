@@ -15,7 +15,7 @@ function SuggestionVideos({ categoryId }) {
         part: 'snippet',
         type: 'video',
         regionCode: 'US',
-        maxResults: "15",
+        maxResults: "5",
         videoCategoryId: categoryId,
         key: API_KEY,
 

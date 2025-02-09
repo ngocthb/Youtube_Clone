@@ -4,6 +4,7 @@ import Content from "../components/Content/Content.jsx";
 import Shorts from "../components/Shorts/Shorts.jsx";
 import VideosList from "../components/VideosList/VideosList.jsx";
 import VideoDetails from "../components/VideoDetails/VideoDetails.jsx";
+import GamingPage from "../components/Gaming/Gaming.jsx";
 
 export const routes = [
   {
@@ -21,6 +22,10 @@ export const routes = [
       {
         path: "/search/:searchValue",
         element: <VideosList />
+      },
+      {
+        path:"/gaming",
+        element: <GamingPage />,
       }
     ],
   },

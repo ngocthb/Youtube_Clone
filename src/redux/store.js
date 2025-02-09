@@ -1,13 +1,14 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 
-import videoReducer from "./reducers/VideoReducer";
+import videoReducer from "./reducers/videoReducer";
 import rootSaga from "./sagas/rootSaga";
 import searchReducer from "./reducers/searchReducer";
-
+import gamingReducer from "./reducers/gamingReducer";
 const rootReducer = combineReducers({
   video: videoReducer,
   search: searchReducer,
+  gaming: gamingReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
