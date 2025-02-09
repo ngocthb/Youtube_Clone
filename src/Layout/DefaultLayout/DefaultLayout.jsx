@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
 import "./DefaultLayout.scss";
+import Carousel from "../../components/Carousel/Carousel";
 
 
 
@@ -34,7 +35,6 @@ function DefaultLayout() {
 
         <Sidebar isOpen={isSidebarOpen} />
         <main className={isSidebarOpen ? "content-open" : "content-closed"}>
-
           <Outlet />
         </main>
       </div>
