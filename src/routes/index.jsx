@@ -4,6 +4,7 @@ import Content from "../components/Content/Content.jsx";
 import Shorts from "../components/Shorts/Shorts.jsx";
 import VideosList from "../components/VideosList/VideosList.jsx";
 import VideoDetails from "../components/VideoDetails/VideoDetails.jsx";
+import Sport from "../components/Sidebar/Sport.jsx";
 
 export const routes = [
   {
@@ -20,8 +21,12 @@ export const routes = [
       },
       {
         path: "/search/:searchValue",
-        element: <VideosList />
-      }
+        element: <VideosList />,
+      },
+      {
+        path: "/sport",
+        element: <Sport />,
+      },
     ],
   },
   {
@@ -32,7 +37,6 @@ export const routes = [
         path: "/video/:videoId",
         element: <VideoDetails />,
       },
-
     ],
   },
 ];
