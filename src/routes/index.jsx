@@ -4,7 +4,7 @@ import Content from "../components/Content/Content.jsx";
 import Shorts from "../components/Shorts/Shorts.jsx";
 import VideosList from "../components/VideosList/VideosList.jsx";
 import VideoDetails from "../components/VideoDetails/VideoDetails.jsx";
-import Sport from "../components/Sidebar/Sport.jsx";
+import Sport from "../components/Sport/Sport.jsx";
 
 export const routes = [
   {
