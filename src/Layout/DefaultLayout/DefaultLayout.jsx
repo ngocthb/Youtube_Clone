@@ -35,7 +35,6 @@ function DefaultLayout() {
 
         <Sidebar isOpen={isSidebarOpen} />
         <main className={isSidebarOpen ? "content-open" : "content-closed"}>
-
           <Outlet />
         </main>
       </div>
