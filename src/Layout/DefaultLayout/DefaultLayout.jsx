@@ -35,8 +35,6 @@ function DefaultLayout() {
 
         <Sidebar isOpen={isSidebarOpen} />
         <main className={isSidebarOpen ? "content-open" : "content-closed"}>
-          {/* Bao lam */}
-          {location.pathname !== "/News" && <Carousel />}
 
           <Outlet />
         </main>
