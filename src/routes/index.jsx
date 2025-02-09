@@ -6,7 +6,9 @@ import VideosList from "../components/VideosList/VideosList.jsx";
 import VideoDetails from "../components/VideoDetails/VideoDetails.jsx";
 import Sport from "../components/Sport/Sport.jsx";
 import Trending from "../components/Trending/Trending.jsx";
+import Music from "../components/Music/Music.jsx";
 import News from "../components/News/News.jsx";
+
 
 export const routes = [
   {
@@ -34,6 +36,10 @@ export const routes = [
         element: <Sport />,
       },
 
+      {
+        path: "/music",
+        element: <Music />,
+      },
       {
         path: "/trending",
         element: <Trending />,
