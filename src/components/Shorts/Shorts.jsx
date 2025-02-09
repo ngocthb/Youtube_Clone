@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Skeleton } from "antd";
+import { Skeleton, Row, Col } from "antd";
 import { searchVideosRequest } from "../../redux/actions/searchAction";
 
 export default function Shorts() {
@@ -53,6 +53,8 @@ export default function Shorts() {
         }
     };
 
+
+
     const renderVolumeIcon = () => {
         if (volume === 0) {
             return (
@@ -101,8 +103,7 @@ export default function Shorts() {
     if (error) return <div>Error: {error}</div>;
 
 
-    if (videos?.items?.length === 0) return <div className="flex justify-center items-center h-screen">No videos found</div>
-
+    console.log(videos.items)
     return (
         <div
         >
