@@ -34,12 +34,12 @@ const VideoSection = ({ title, videos, initialCount = 6 }) => {
       </div>
 
       <div className="divider">
-  {hasMoreVideos && (
-    <button className="button" onClick={handleToggle}>
-      {expanded ? "Show less" : "Show more"}
-    </button>
-  )}
-</div>
+        {hasMoreVideos && (
+          <button className="button" onClick={handleToggle}>
+            {expanded ? "Show less" : "Show more"}
+          </button>
+        )}
+      </div>
     </div>
   );
 };
@@ -54,20 +54,30 @@ function Music() {
   const [progress, setProgress] = useState(0);
   const [activeTab, setActiveTab] = useState("home");
 
+  const params = {
+    part: "snippet,statistics",
+    regionCode: "US",
+    key: API_KEY,
+    maxResults: 30,
+    chart: "mostPopular",
+    videoCategoryId: "10",
+    type: "video",
+    videoDuration: "short",
+  };
+
   useEffect(() => {
     if (videoList.length === 0) {
-      dispatch(
-        fetchVideosRequest({
-          part: "snippet,statistics",
-          key: API_KEY,
-          chart: "mostPopular",
-          videoCategoryId: "10",
-          regionCode: "US",
-          maxResults: 30,
-        })
-      );
+      dispatch(fetchVideosRequest(params));
     }
   }, [dispatch, videoList.length, API_KEY]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      window.location.reload();
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -105,11 +115,13 @@ function Music() {
   return (
     <div className="music-container">
       <div className="hero">
-      <div className="hero-info">
-  <p className="channel" key={`channel-${mostPopularVideo.id}`}>
-    {mostPopularVideo.snippet.channelTitle} • {parseInt(mostPopularVideo.statistics.viewCount).toLocaleString()} views • {calculateTimeAgo(mostPopularVideo.snippet.publishedAt)}
-  </p>
-  <h2 key={`title-${mostPopularVideo.id}`}>{mostPopularVideo.snippet.title}</h2>
+        <div className="hero-info">
+          <p className="channel" key={`channel-${mostPopularVideo.id}`}>
+            {mostPopularVideo.snippet.channelTitle} •{" "}
+            {parseInt(mostPopularVideo.statistics.viewCount).toLocaleString()} views •{" "}
+            {calculateTimeAgo(mostPopularVideo.snippet.publishedAt)}
+          </p>
+          <h2 key={`title-${mostPopularVideo.id}`}>{mostPopularVideo.snippet.title}</h2>
 
           <div className="carousel-music">
             {videoList.slice(0, 5).map((video, index) => (
@@ -144,13 +156,20 @@ function Music() {
 
       <div className="yt-music-channel">
         <div className="yt-music-content">
-          <img className="yt-music-avatar" src="https://yt3.googleusercontent.com/-3Y3URk8DopESFlynIvuiSk6XKG2d7IFvV4wyX97Z6HOtvgOvbrULOqNyXPVWa6xG1nH_JRuMQ=s88-c-k-c0x00ffffff-no-rj-mo" alt="YouTube Music" />
+          <img
+            className="yt-music-avatar"
+            src="https://yt3.googleusercontent.com/-3Y3URk8DopESFlynIvuiSk6XKG2d7IFvV4wyX97Z6HOtvgOvbrULOqNyXPVWa6xG1nH_JRuMQ=s88-c-k-c0x00ffffff-no-rj-mo"
+            alt="YouTube Music"
+          />
           <div className="yt-music-details">
             <p1>Music</p1>
             <p>122M subscribers</p>
           </div>
         </div>
-        <button className="subscribe-button" onClick={() => window.open("https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ?sub_confirmation=1", "_blank")}>
+        <button
+          className="subscribe-button"
+          onClick={() => window.open("https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ?sub_confirmation=1", "_blank")}
+        >
           Subscribe
         </button>
       </div>
