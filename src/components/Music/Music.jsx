@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchVideosRequest } from "../../redux/actions/videoAction";
+import { fetchVideosRequest, resetVideos } from "../../redux/actions/videoAction";
 import { PlayIcon } from "lucide-react";
 import "./Music.scss";
 
@@ -64,12 +64,16 @@ function Music() {
     type: "video",
     videoDuration: "short",
   };
+  
 
   useEffect(() => {
-    if (videoList.length === 0) {
-      dispatch(fetchVideosRequest(params));
-    }
-  }, [dispatch, videoList.length, API_KEY]);
+    dispatch(fetchVideosRequest(params)); // Always fetch new videos
+  
+    return () => {
+      dispatch(resetVideos()); // Reset videos when the component unmounts
+    };
+  }, [dispatch, API_KEY]);
+  
 
   useEffect(() => {
     const handlePopState = () => {
