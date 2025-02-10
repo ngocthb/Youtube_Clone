@@ -8,7 +8,7 @@ import Sport from "../components/Sport/Sport.jsx";
 import Trending from "../components/Trending/Trending.jsx";
 import Music from "../components/Music/Music.jsx";
 import News from "../components/News/News.jsx";
-
+import Gaming from "../components/Gaming/Gaming.jsx";
 
 export const routes = [
   {
@@ -43,6 +43,10 @@ export const routes = [
       {
         path: "/trending",
         element: <Trending />,
+      },
+      {
+        path: "/gaming",
+        element: <Gaming />,
       },
     ],
   },
